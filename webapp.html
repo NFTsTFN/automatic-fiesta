@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Парсер</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 20px; background-color: #f0f0f0; }
+        .container { background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        input[type="url"] { width: 90%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; border: none; border-radius: 5px; background-color: #0088cc; color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Введите URL для парсинга</h2>
+        <input type="url" id="urlInput" placeholder="https://example.com">
+        <button onclick="sendUrl()">Отправить</button>
+    </div>
+
+    <script>
+        function sendUrl() {
+            const url = document.getElementById('urlInput').value;
+            if (url) {
+                // Отправляем URL-адрес в Telegram-бот
+                window.Telegram.WebApp.sendData(url);
+            }
+        }
+    </script>
+</body>
+</html>
